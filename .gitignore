@@ -5,7 +5,6 @@
 /week_2/config/bin/
 /week_2/config/local.env
 /week_2/config/prod.env
-/week_2/grpc/
 /week_3/bin/
 /week_5/bin/
 /week_5/vendor.protogen/
