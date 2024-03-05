@@ -21,3 +21,20 @@ func NewService(
 		txManager:      txManager,
 	}
 }
+
+func NewMockService(deps ...interface{}) service.NoteService {
+	srv := serv{}
+	for _, v := range deps {
+
+		switch s := v.(type) {
+		case repository.NoteRepository:
+			srv.noteRepository = s
+
+		case db.TxManager:
+			srv.txManager = s
+
+		}
+	}
+
+	return &srv
+}
